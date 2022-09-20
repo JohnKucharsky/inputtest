@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import SingleInput from "./SingleInput";
 
 const arrayWithKeys = [1, 2, 3, 4, 5];
@@ -28,6 +28,9 @@ export default function Inputs() {
     setResetInputFields((prev) => !prev);
     setMultipleInputsValue([]);
   }
+  useEffect(() => {
+    setMultipleInputsValue(multipleInputsValue.filter((v) => v.input !== ""));
+  }, [multipleInputsValue]);
 
   return (
     <div>

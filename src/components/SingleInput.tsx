@@ -26,6 +26,7 @@ export default function SingleInput(p: singleInputProps) {
 
   function handleChangeInputValue(e: React.ChangeEvent<HTMLInputElement>) {
     setInputValue(e.target.value);
+
     const exists = p.multipleInputsValue.find((v) => v.key === p.uniqueId);
     if (exists) {
       const filteredArray = p.multipleInputsValue.filter(
